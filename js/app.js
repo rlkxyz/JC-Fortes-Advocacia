@@ -144,6 +144,10 @@
     nota.hidden = !n;
     docs.textContent = '';
     it.docs.forEach(d => docs.appendChild(el('li', null, d)));
+    if (!grupoAtual.semComuns && D.comuns) {
+      docs.appendChild(el('li', 'caso-docs-titulo', 'Em todo atendimento'));
+      D.comuns.forEach(d => docs.appendChild(el('li', null, d)));
+    }
     atualizarLink();
     if (window.JCAnim) window.JCAnim.painel($$('li', docs), trocouGrupo);
   }
