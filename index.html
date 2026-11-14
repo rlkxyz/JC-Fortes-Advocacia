@@ -1,238 +1,470 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<!doctype html>
+<html lang="pt-BR" class="sem-js">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JC Fortes Advocacia — Soluções Jurídicas e Imobiliárias | São Pedro da Aldeia, RJ</title>
-<meta name="description" content="JC Fortes Advocacia — soluções jurídicas e imobiliárias em São Pedro da Aldeia e Região dos Lagos. Direito de família, consumidor, imobiliário e correspondente jurídico.">
-<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JC Fortes Advocacia · Soluções Jurídicas e Imobiliárias em São Pedro da Aldeia</title>
+<meta name="description" content="Escritório de advocacia em São Pedro da Aldeia, Região dos Lagos. Cível, família, consumidor e imobiliário; trabalho e previdenciário; criminal. Atendimento pelo WhatsApp (22) 97402-6263.">
+<!-- Prévia: fica fora do Google até o escritório aprovar o site. Tirar esta linha na publicação oficial. -->
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="JC Fortes Advocacia">
+<meta property="og:title" content="JC Fortes Advocacia · Soluções Jurídicas e Imobiliárias">
+<meta property="og:description" content="Três advogados em São Pedro da Aldeia: cível, família, consumidor e imobiliário; trabalho e previdenciário; criminal.">
+<meta property="og:url" content="https://jc-fortes-advocacia.vercel.app/">
+<meta property="og:image" content="https://jc-fortes-advocacia.vercel.app/img/capa.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="img/icone-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="img/icone-180.png">
+<link rel="preload" href="fonts/playfair-500.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/estilo.css">
+<script src="js/movimento.js"></script>
+<script src="js/vendor/gsap.min.js" defer></script>
+<script src="js/vendor/ScrollTrigger.min.js" defer></script>
+<script src="js/casos.js" defer></script>
+<script src="js/app.js" defer></script>
+<script src="js/animacoes.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LegalService",
+  "name": "JC Fortes Advocacia",
+  "description": "Soluções jurídicas e imobiliárias em São Pedro da Aldeia, Região dos Lagos (RJ).",
+  "url": "https://jc-fortes-advocacia.vercel.app/",
+  "image": "https://jc-fortes-advocacia.vercel.app/img/capa.jpg",
+  "logo": "https://jc-fortes-advocacia.vercel.app/img/logo-completo.png",
+  "telephone": "+55-22-97402-6263",
+  "email": "prjosecarlosfortes@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rodovia Amaral Peixoto, 361, km 104",
+    "addressLocality": "São Pedro da Aldeia",
+    "addressRegion": "RJ",
+    "postalCode": "28949-746",
+    "addressCountry": "BR"
+  },
+  "areaServed": ["São Pedro da Aldeia", "Cabo Frio", "Iguaba Grande", "Araruama", "Região dos Lagos"],
+  "sameAs": ["https://www.instagram.com/jcfortesadvocacia/", "https://www.threads.com/@jcfortesadvocacia"],
+  "employee": [
+    { "@type": "Person", "name": "José Carlos Fortes", "jobTitle": "Advogado, OAB/RJ 201.099" },
+    { "@type": "Person", "name": "Viviana Faco", "jobTitle": "Advogada, OAB/RJ 201.393" },
+    { "@type": "Person", "name": "Ezio Cotrim", "jobTitle": "Advogado, OAB/RJ 159.902" }
+  ]
+}
+</script>
 </head>
 <body>
 
-<header class="site-header" id="topo">
-  <div class="container header-inner">
-    <a class="logo" href="#topo">
-      <span class="crest" aria-hidden="true">
-        <svg viewBox="0 0 100 118" width="40" height="47">
-          <path class="crest-shape" d="M50 2 L96 18 V56 C96 88 76 106 50 116 C24 106 4 88 4 56 V18 Z"/>
-          <text x="50" y="70" class="crest-letters" text-anchor="middle">JC</text>
-        </svg>
-      </span>
-      <span class="logo-text">JC Fortes<small>Advocacia</small></span>
+<svg class="escondido" aria-hidden="true" focusable="false">
+  <symbol id="i-whats" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.07c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.42.25-.69.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.81 11.81 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.48-8.41Z"/></symbol>
+  <symbol id="i-seta" viewBox="0 0 24 24"><path d="M5 12h13.5m-5-5.2L18.6 12l-5.1 5.2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fora" viewBox="0 0 24 24"><path d="M9 5.5h9.5V15M18.2 5.8 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-insta" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></symbol>
+  <symbol id="i-email" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pino" viewBox="0 0 24 24"><path d="M12 21.5s-6.8-6.3-6.8-11.3a6.8 6.8 0 0 1 13.6 0c0 5-6.8 11.3-6.8 11.3z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="10.2" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+  <symbol id="i-alerta" viewBox="0 0 24 24"><path d="M12 3.2 2.6 19.6h18.8z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12 9.5v4.6M12 16.9v.1" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-ok" viewBox="0 0 24 24"><path d="m5.5 12.5 4.2 4.2 8.8-9.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11m0-11-11 11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M7.2 3.5h2.6l1.5 4.2-2 1.6a11 11 0 0 0 5.4 5.4l1.6-2 4.2 1.5v2.6a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 5.2 5.7a2 2 0 0 1 2-2.2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <!-- contorno do escudo do logo: degraus no alto, ponta embaixo -->
+  <symbol id="escudo" viewBox="0 0 100 104"><path d="M15 2H85V9.5H98L94 57 50 102 6 57 2 9.5H15Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="miter"/></symbol>
+</svg>
+
+<a class="pular" href="#conteudo-principal">Pular para o conteúdo</a>
+
+<header class="topo" id="topo">
+  <div class="caixa topo-linha">
+    <a class="marca" href="#inicio" aria-label="JC Fortes Advocacia, voltar ao início">
+      <picture>
+        <source srcset="img/logo-escudo.webp" type="image/webp">
+        <img src="img/logo-escudo.png" alt="" width="262" height="256">
+      </picture>
+      <span class="marca-nome">JC Fortes<small>Advocacia</small></span>
     </a>
-
-    <nav class="main-nav" id="mainNav">
-      <a href="#areas">Áreas de Atuação</a>
-      <a href="#correspondente">Correspondente Jurídico</a>
-      <a href="#sobre">Sobre</a>
-      <a href="#contato">Contato</a>
+    <nav class="menu" id="menu" aria-label="Seções do site">
+      <a href="#advogados">Advogados</a>
+      <a href="#seu-caso">Seu caso</a>
+      <a href="#empresas">Empresas e colegas</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#onde">Onde estamos</a>
+      <a class="menu-whats" href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Falar no WhatsApp</a>
     </nav>
-
-    <div class="header-actions">
-      <a class="whats-link" href="https://wa.me/5522974026263" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.57.81 1.98.88 2.13.07.14.11.31.02.5-.09.2-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.2.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
-        <span>(22) 97402-6263</span>
-      </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+    <a class="topo-whats" href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer">
+      <svg aria-hidden="true"><use href="#i-whats"/></svg><span>(22) 97402-6263</span>
+    </a>
+    <button class="menu-botao" id="menu-botao" type="button" aria-expanded="false" aria-controls="menu">
+      <svg class="abre" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="fecha" aria-hidden="true"><use href="#i-x"/></svg>
+      <span class="escondido">Menu</span>
+    </button>
   </div>
 </header>
 
-<main>
+<main id="conteudo-principal">
 
-  <section class="hero">
-    <div class="hero-bg" aria-hidden="true">
-      <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-        <path d="M50 4 L92 22 V54 C92 82 74 96 50 96 C26 96 8 82 8 54 V22 Z" fill="none" stroke="#c9a227" stroke-width="0.4" opacity="0.35"/>
-      </svg>
-    </div>
-    <div class="container hero-content">
-      <p class="eyebrow">Advocacia &amp; Soluções Imobiliárias · Região dos Lagos — RJ</p>
-      <h1>Orientação jurídica séria, clara e sem enrolação</h1>
-      <p class="hero-sub">Atendimento em Direito de Família, Consumidor e Imobiliário, além de correspondência jurídica pra outros escritórios da Região dos Lagos. Cada caso é ouvido com atenção antes de qualquer resposta.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="https://wa.me/5522974026263" target="_blank" rel="noopener">Falar no WhatsApp</a>
-        <a class="btn btn-ghost" href="#areas">Ver áreas de atuação</a>
+  <!-- ============ ENTRADA ============ -->
+  <section class="entrada" id="inicio" aria-labelledby="entrada-titulo">
+    <svg class="entrada-escudo" aria-hidden="true" viewBox="0 0 100 104" preserveAspectRatio="xMidYMid meet">
+      <path vector-effect="non-scaling-stroke" d="M15 2H85V9.5H98L94 57 50 102 6 57 2 9.5H15Z"/>
+      <path vector-effect="non-scaling-stroke" transform="translate(50 52) scale(.93) translate(-50 -52)" d="M15 2H85V9.5H98L94 57 50 102 6 57 2 9.5H15Z"/>
+    </svg>
+    <div class="caixa entrada-grade">
+      <div class="entrada-texto">
+        <p class="saudacao" data-entra>Olá, meus Fortes!</p>
+        <h1 id="entrada-titulo" data-entra>Mais do que advogados: aliados para proteger o que é seu.</h1>
+        <p class="entrada-sub" data-entra>Escritório em São Pedro da Aldeia, na Região dos Lagos. Três advogados, cada um na sua área: cível, família, consumidor e imobiliário; trabalho e previdenciário; criminal.</p>
+        <div class="entrada-botoes" data-entra>
+          <a class="botao botao-ouro" href="https://wa.me/5522974026263?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20JC%20Fortes%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Falar no WhatsApp</a>
+          <a class="botao botao-linha" href="#seu-caso">Por onde começar<svg aria-hidden="true"><use href="#i-seta"/></svg></a>
+        </div>
+        <p class="entrada-endereco" data-entra><svg aria-hidden="true"><use href="#i-pino"/></svg>Rodovia Amaral Peixoto, km 104 · Praia Linda · São Pedro da Aldeia/RJ</p>
       </div>
-    </div>
-  </section>
-
-  <section class="diferenciais" id="diferenciais">
-    <div class="container">
-      <div class="diferenciais-grid">
-        <div class="diferencial-item">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5.5 3.8 9.7 9 11 5.2-1.3 9-5.5 9-11V6z"/><path d="M9 12l2 2 4-4"/></svg>
-          <span>Sigilo total do caso</span>
-        </div>
-        <div class="diferencial-item">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-          <span>Atende toda a Região dos Lagos</span>
-        </div>
-        <div class="diferencial-item">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          <span>Atendimento direto pelo WhatsApp</span>
-        </div>
-        <div class="diferencial-item">
-          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
-          <span>Direito imobiliário incluso</span>
+      <div class="entrada-logo" data-entra>
+        <div class="logo-brilho">
+          <picture>
+            <source srcset="img/logo-completo.webp" type="image/webp">
+            <img src="img/logo-completo.png" alt="JC Fortes, Soluções Jurídicas e Imobiliárias" width="408" height="486" fetchpriority="high">
+          </picture>
+          <span class="logo-reflexo" aria-hidden="true"></span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="alerta" id="alerta">
-    <div class="container alerta-inner">
-      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
-      <p><strong>Atenção a golpes:</strong> nosso único contato oficial é o WhatsApp (22) 97402-6263. Não atendemos por outro número. Em caso de dúvida, confirme por aqui antes de qualquer pagamento ou envio de documento.</p>
+  <!-- ============ GOLPE ============ -->
+  <aside class="golpe" aria-label="Aviso de golpe">
+    <div class="caixa golpe-linha">
+      <svg aria-hidden="true"><use href="#i-alerta"/></svg>
+      <p><strong>Cuidado com golpe.</strong> Há alguém usando o nome e o logo do escritório num número com DDD 21. O único WhatsApp oficial é o <a href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer">(22) 97402-6263</a>. Na dúvida, confirme por aqui antes de pagar qualquer valor ou enviar documentos.</p>
     </div>
-  </section>
+  </aside>
 
-  <section class="areas" id="areas">
-    <div class="container">
-      <p class="eyebrow center">Áreas de atuação</p>
-      <h2 class="center">Onde podemos ajudar</h2>
-      <div class="areas-grid">
+  <!-- ============ ADVOGADOS ============ -->
+  <section class="secao" id="advogados" aria-labelledby="advogados-titulo">
+    <div class="caixa">
+      <header class="secao-cabeca" data-revela>
+        <p class="etiqueta"><span>Quem atende</span></p>
+        <h2 id="advogados-titulo">Três advogados, cada um na sua área</h2>
+        <p class="secao-sub">A nossa missão é orientar com clareza, respeitar a sua história e buscar a solução adequada para o seu caso. A mensagem já chega com o nome de quem cuida do assunto.</p>
+      </header>
 
-        <div class="area-card">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 21v-2a5 5 0 0 1 5-5h2a5 5 0 0 1 5 5v2M14 12a5 5 0 0 1 5 5v2"/></svg>
-          <h3>Direito de Família</h3>
-          <p>Divórcio e separação, dissolução extrajudicial, pensão alimentícia, guarda de filhos menores, inventário e partilha de bens.</p>
-        </div>
+      <div class="time">
+        <article class="advogado moldura" data-revela>
+          <div class="advogado-selo">
+            <svg class="selo-escudo" aria-hidden="true" viewBox="0 0 100 104"><path pathLength="1" d="M15 2H85V9.5H98L94 57 50 102 6 57 2 9.5H15Z"/></svg>
+            <span class="selo-letras" aria-hidden="true">JCF</span>
+          </div>
+          <p class="advogado-area">Cível · Família · Consumidor · Imobiliário</p>
+          <h3>Dr. José Carlos Fortes</h3>
+          <p class="oab">OAB/RJ 201.099</p>
+          <ul class="assuntos">
+            <li>Divórcio, pensão e guarda</li>
+            <li>Inventário e partilha</li>
+            <li>Cobrança indevida e golpes</li>
+            <li>Contratos de imóvel</li>
+            <li>Execução judicial</li>
+            <li>Ofensa na internet</li>
+          </ul>
+          <a class="botao botao-linha botao-cheio" data-whats-advogado="jose" href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Falar com o Dr. José Carlos</a>
+        </article>
 
-        <div class="area-card">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3h18M3 3l2 9a4 4 0 0 0 8 0l2-9M3 3l-1 9a4 4 0 0 0 8 0"/><path d="M12 3v18M8 21h8"/></svg>
-          <h3>Direito do Consumidor</h3>
-          <p>Cobrança indevida, golpe bancário, indenização por danos morais, plano de saúde fora do rol da ANS, revisão de financiamento.</p>
-        </div>
+        <article class="advogado moldura" data-revela>
+          <div class="advogado-selo">
+            <svg class="selo-escudo" aria-hidden="true" viewBox="0 0 100 104"><path pathLength="1" d="M15 2H85V9.5H98L94 57 50 102 6 57 2 9.5H15Z"/></svg>
+            <span class="selo-letras" aria-hidden="true">VF</span>
+          </div>
+          <p class="advogado-area">Trabalho · Previdenciário</p>
+          <h3>Dra. Viviana Faco</h3>
+          <p class="oab">OAB/RJ 201.393</p>
+          <ul class="assuntos">
+            <li>Verbas da rescisão</li>
+            <li>Horas extras e FGTS</li>
+            <li>Carteira não assinada</li>
+            <li>Aposentadoria</li>
+            <li>Benefícios do INSS</li>
+          </ul>
+          <a class="botao botao-linha botao-cheio" data-whats-advogado="viviana" href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Falar com a Dra. Viviana</a>
+        </article>
 
-        <div class="area-card">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 21V9l8-6 8 6v12"/><path d="M9 21v-6h6v6"/></svg>
-          <h3>Direito Imobiliário</h3>
-          <p>Contratos de compra, venda e locação, regularização de imóveis, comunicação de venda no Detran e questões relacionadas.</p>
-        </div>
-
-        <div class="area-card">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h2M14 15h2"/></svg>
-          <h3>Execução Judicial</h3>
-          <p>Penhora, bloqueio de conta ou leilão em andamento: entenda seus direitos e busque uma solução jurídica e financeira estável.</p>
-        </div>
-
-        <div class="area-card">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
-          <h3>Direito Digital</h3>
-          <p>Xingamento, exposição indevida, fake news e vazamento de dados pessoais na internet: print é prova, e você não precisa enfrentar isso sozinho.</p>
-        </div>
-
-        <div class="area-card">
-          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
-          <h3>Idoso, PCD e Infância</h3>
-          <p>Direitos da pessoa idosa e da pessoa com deficiência (acessibilidade, plano de saúde), além de proteção à infância e adolescência.</p>
-        </div>
-
+        <article class="advogado moldura" data-revela>
+          <div class="advogado-selo">
+            <svg class="selo-escudo" aria-hidden="true" viewBox="0 0 100 104"><path pathLength="1" d="M15 2H85V9.5H98L94 57 50 102 6 57 2 9.5H15Z"/></svg>
+            <span class="selo-letras" aria-hidden="true">EC</span>
+          </div>
+          <p class="advogado-area">Criminal · Penal</p>
+          <h3>Dr. Ezio Cotrim</h3>
+          <p class="oab">OAB/RJ 159.902</p>
+          <ul class="assuntos">
+            <li>Intimação e delegacia</li>
+            <li>Defesa em processo criminal</li>
+            <li>Orientação a vítimas</li>
+          </ul>
+          <a class="botao botao-linha botao-cheio" data-whats-advogado="ezio" href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Falar com o Dr. Ezio</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="correspondente" id="correspondente">
-    <div class="container correspondente-grid">
-      <div class="correspondente-text">
-        <p class="eyebrow eyebrow-light">Pra colegas de profissão</p>
-        <h2>Correspondente jurídico na Região dos Lagos</h2>
-        <p>Suporte pra escritórios de outras cidades que precisam de alguém de confiança em São Pedro da Aldeia e região.</p>
-        <ul class="correspondente-list">
-          <li>Audiências e despachos com juiz</li>
-          <li>Protocolo, cópia e digitalização de documentos</li>
-          <li>Elaboração de peças processuais e contratos</li>
-          <li>Acompanhamento de perícia</li>
-          <li>Guias, certidões e alvarás</li>
-          <li>Diligências cartorárias e administrativas</li>
+  <!-- ============ SEU CASO ============ -->
+  <section class="secao secao-escura" id="seu-caso" aria-labelledby="caso-titulo">
+    <div class="caixa">
+      <header class="secao-cabeca" data-revela>
+        <p class="etiqueta"><span>Por onde começar</span></p>
+        <h2 id="caso-titulo">Qual é a sua situação?</h2>
+        <p class="secao-sub">Escolha o assunto mais parecido com o seu. A gente mostra quem cuida, o que separar para a primeira conversa e deixa a mensagem pronta no WhatsApp.</p>
+      </header>
+
+      <div class="caso" data-revela>
+        <div class="caso-escolha">
+          <div class="caso-grupos" id="caso-grupos" role="group" aria-label="Áreas"></div>
+          <fieldset class="caso-itens">
+            <legend class="escondido">Assunto</legend>
+            <div id="caso-itens"></div>
+          </fieldset>
+        </div>
+
+        <div class="caso-painel moldura" id="caso-painel" aria-live="polite">
+          <p class="caso-rotulo">Quem cuida</p>
+          <div class="caso-quem">
+            <span class="mini-selo" aria-hidden="true"><svg class="mini-escudo"><use href="#escudo"/></svg><span id="caso-sigla">JCF</span></span>
+            <div>
+              <p class="caso-nome" id="caso-nome">Dr. José Carlos Fortes</p>
+              <p class="caso-oab" id="caso-oab">OAB/RJ 201.099</p>
+            </div>
+          </div>
+          <p class="caso-nota" id="caso-nota" hidden></p>
+          <p class="caso-rotulo">O que separar para a conversa</p>
+          <ul class="caso-docs" id="caso-docs">
+            <li>RG e CPF</li>
+            <li>Documentos que tiver sobre o caso</li>
+          </ul>
+          <p class="caso-dica">É só para adiantar. Se não tiver tudo, sem problema: o advogado orienta na conversa.</p>
+          <label class="caso-campo" for="caso-texto">
+            <span>Quer adiantar em poucas palavras? <em>(opcional)</em></span>
+            <textarea id="caso-texto" rows="3" maxlength="280" placeholder="Ex.: me separei há dois anos e ainda não dividimos a casa."></textarea>
+          </label>
+          <a class="botao botao-ouro botao-cheio" id="caso-enviar" href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Enviar pelo WhatsApp</a>
+          <p class="caso-privado">O que você escrever vai só na mensagem do WhatsApp. O site não guarda nada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EMPRESAS E COLEGAS ============ -->
+  <section class="secao" id="empresas" aria-labelledby="empresas-titulo">
+    <div class="caixa">
+      <header class="secao-cabeca" data-revela>
+        <p class="etiqueta"><span>Além do atendimento a pessoas</span></p>
+        <h2 id="empresas-titulo">Para empresas e para colegas advogados</h2>
+      </header>
+      <div class="dupla">
+        <article class="frente moldura" data-revela>
+          <h3>Assessoria para empresas</h3>
+          <p>Muito prejuízo nasce de uma omissão simples: falta de contrato, comunicação informal ou ausência de planejamento. Prevenir é sempre mais acessível do que remediar.</p>
+          <ul class="lista-ok">
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Contratos bem estruturados</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Planejamento jurídico preventivo</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Notificações e comunicação formal</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Orientação antes de decidir</li>
+          </ul>
+          <a class="botao botao-linha" data-whats-texto="Olá! Vim pelo site da JC Fortes e gostaria de falar sobre assessoria jurídica para a minha empresa." href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Falar sobre a minha empresa</a>
+        </article>
+        <article class="frente moldura" data-revela>
+          <h3>Correspondente jurídico na Região dos Lagos</h3>
+          <p>Para escritórios de outras cidades que precisam de alguém de confiança em São Pedro da Aldeia e região.</p>
+          <ul class="lista-ok">
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Audiências e despachos com juiz</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Protocolo, cópia e digitalização</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Peças processuais e contratos</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Acompanhamento de perícia</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Guias, certidões e alvarás</li>
+            <li><svg aria-hidden="true"><use href="#i-ok"/></svg>Diligências em cartório e órgãos públicos</li>
+          </ul>
+          <a class="botao botao-linha" data-whats-texto="Olá! Sou advogado(a) e vim pelo site da JC Fortes. Preciso de uma correspondência jurídica na Região dos Lagos." href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-whats"/></svg>Pedir uma correspondência</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTEÚDO DO INSTAGRAM ============ -->
+  <section class="secao secao-escura" id="conteudo" aria-labelledby="conteudo-titulo">
+    <div class="caixa">
+      <header class="secao-cabeca secao-cabeca-lado" data-revela>
+        <div>
+          <p class="etiqueta"><span>No Instagram</span></p>
+          <h2 id="conteudo-titulo">Seu direito começa com a informação</h2>
+          <p class="secao-sub">No @jcfortesadvocacia a gente explica direitos com casos reais e decisões da Justiça. Alguns deles:</p>
+        </div>
+        <a class="botao botao-linha" href="https://www.instagram.com/jcfortesadvocacia/" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-insta"/></svg>Seguir no Instagram</a>
+      </header>
+
+      <div class="posts">
+        <a class="post" data-revela href="https://www.instagram.com/p/DV3L2_yAGL5/" target="_blank" rel="noopener noreferrer">
+          <span class="post-topo"><span class="post-tag">Consumidor</span><time datetime="2026-03-14">14 mar 2026</time></span>
+          <span class="post-titulo">Pagou o preço da promoção e o mercado alegou erro</span>
+          <span class="post-texto">Um comerciante pagou R$ 16,5 mil em cervejas anunciadas em promoção. Depois da recusa na entrega, a mercadoria foi liberada pelo valor pago.</span>
+          <span class="post-fonte">Fonte: g1</span>
+          <span class="post-ver">Ver no Instagram<svg aria-hidden="true"><use href="#i-fora"/></svg></span>
+        </a>
+        <a class="post" data-revela href="https://www.instagram.com/p/DVHv4DiiRNP/" target="_blank" rel="noopener noreferrer">
+          <span class="post-topo"><span class="post-tag">Criminal</span><time datetime="2026-02-23">23 fev 2026</time></span>
+          <span class="post-titulo">Falsa benzedeira: STJ mantém condenação por extorsão</span>
+          <span class="post-texto">Ela recebeu R$ 136,5 mil de uma idosa sob ameaça de que o filho e o neto morreriam. A condenação foi mantida.</span>
+          <span class="post-fonte">Fonte: Migalhas</span>
+          <span class="post-ver">Ver no Instagram<svg aria-hidden="true"><use href="#i-fora"/></svg></span>
+        </a>
+        <a class="post" data-revela href="https://www.instagram.com/p/DVB8E1hiaHh/" target="_blank" rel="noopener noreferrer">
+          <span class="post-topo"><span class="post-tag">Poder público</span><time datetime="2026-02-21">21 fev 2026</time></span>
+          <span class="post-titulo">Pedestre caiu numa galeria aberta na calçada</span>
+          <span class="post-texto">No recurso, o TJ-MG aplicou a responsabilidade objetiva do município por omissão (Tema 592 do STF): não é preciso provar culpa.</span>
+          <span class="post-fonte">Fonte: Consultor Jurídico</span>
+          <span class="post-ver">Ver no Instagram<svg aria-hidden="true"><use href="#i-fora"/></svg></span>
+        </a>
+        <a class="post" data-revela href="https://www.instagram.com/reel/DU9KSUFiQW0/" target="_blank" rel="noopener noreferrer">
+          <span class="post-topo"><span class="post-tag">Consumidor</span><time datetime="2026-02-19">19 fev 2026</time></span>
+          <span class="post-titulo">Cartão não passou e querem cancelar a sua compra?</span>
+          <span class="post-texto">Você não é obrigado a sair no prejuízo. Quando o sistema de pagamento falha, o fornecedor deve apresentar uma solução.</span>
+          <span class="post-fonte">Código de Defesa do Consumidor, arts. 14, 42 e 51</span>
+          <span class="post-ver">Ver no Instagram<svg aria-hidden="true"><use href="#i-fora"/></svg></span>
+        </a>
+        <a class="post" data-revela href="https://www.instagram.com/reel/DU6QsDWCTL6/" target="_blank" rel="noopener noreferrer">
+          <span class="post-topo"><span class="post-tag">Consumidor</span><time datetime="2026-02-18">18 fev 2026</time></span>
+          <span class="post-titulo">Carro de aplicativo ficou sem combustível e o passageiro perdeu o voo</span>
+          <span class="post-texto">O Tribunal de Justiça de São Paulo reconheceu a responsabilidade da plataforma e determinou indenização ao passageiro.</span>
+          <span class="post-fonte">TJSP</span>
+          <span class="post-ver">Ver no Instagram<svg aria-hidden="true"><use href="#i-fora"/></svg></span>
+        </a>
+        <a class="post" data-revela href="https://www.instagram.com/reel/DUt6ZK3iQ5k/" target="_blank" rel="noopener noreferrer">
+          <span class="post-topo"><span class="post-tag">Financiamento</span><time datetime="2026-02-13">13 fev 2026</time></span>
+          <span class="post-titulo">Parcelas do carro pesando no bolso?</span>
+          <span class="post-texto">A Justiça permite rever contratos quando há juros excessivos, cobranças indevidas ou cláusulas abusivas.</span>
+          <span class="post-fonte">Revisão de financiamento</span>
+          <span class="post-ver">Ver no Instagram<svg aria-hidden="true"><use href="#i-fora"/></svg></span>
+        </a>
+      </div>
+
+      <div class="respeito moldura" data-revela>
+        <div class="respeito-texto">
+          <h3>Contatos de respeito</h3>
+          <p>Viu ou suspeita de violência contra crianças ou adolescentes? Denuncie. Não se cale.</p>
+        </div>
+        <ul class="respeito-numeros">
+          <li><a href="tel:100"><b>100</b><span>Direitos humanos, exploração e trabalho infantil</span></a></li>
+          <li><a href="tel:190"><b>190</b><span>Polícia Militar</span></a></li>
+          <li><a href="tel:191"><b>191</b><span>Polícia Rodoviária Federal</span></a></li>
+          <li><a href="tel:192"><b>192</b><span>SAMU</span></a></li>
+          <li><a href="tel:193"><b>193</b><span>Corpo de Bombeiros</span></a></li>
         </ul>
-        <a class="btn btn-primary" href="https://wa.me/5522974026263" target="_blank" rel="noopener">Solicitar correspondência</a>
       </div>
-      <div class="correspondente-badge" aria-hidden="true">
-        <svg viewBox="0 0 100 118" width="140" height="165">
-          <path class="crest-shape-lg" d="M50 2 L96 18 V56 C96 88 76 106 50 116 C24 106 4 88 4 56 V18 Z"/>
-          <text x="50" y="70" class="crest-letters-lg" text-anchor="middle">JC</text>
+    </div>
+  </section>
+
+  <!-- ============ ONDE ESTAMOS ============ -->
+  <section class="secao" id="onde" aria-labelledby="onde-titulo">
+    <div class="caixa onde-grade">
+      <div class="onde-texto" data-revela>
+        <p class="etiqueta"><span>Onde estamos</span></p>
+        <h2 id="onde-titulo">No km 104 da Amaral Peixoto</h2>
+        <p class="secao-sub">Praia Linda, São Pedro da Aldeia, entre Iguaba Grande e o centro. Atendimento em toda a Região dos Lagos.</p>
+        <ul class="contatos">
+          <li><svg aria-hidden="true"><use href="#i-pino"/></svg><span>Rodovia Amaral Peixoto, nº 361, km 104<br>Praia Linda, São Pedro da Aldeia/RJ<br>CEP 28949-746</span></li>
+          <li><svg aria-hidden="true"><use href="#i-whats"/></svg><a href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer">(22) 97402-6263</a></li>
+          <li><svg aria-hidden="true"><use href="#i-email"/></svg><a href="mailto:prjosecarlosfortes@gmail.com">prjosecarlosfortes@gmail.com</a></li>
+          <li><svg aria-hidden="true"><use href="#i-insta"/></svg><a href="https://www.instagram.com/jcfortesadvocacia/" target="_blank" rel="noopener noreferrer">@jcfortesadvocacia</a></li>
+        </ul>
+        <div class="onde-botoes">
+          <a class="botao botao-ouro" href="https://www.google.com/maps/search/?api=1&amp;query=Rodovia%20Amaral%20Peixoto%20361%2C%20Praia%20Linda%2C%20S%C3%A3o%20Pedro%20da%20Aldeia%20RJ%2028949-746" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#i-pino"/></svg>Abrir no Google Maps</a>
+          <a class="botao botao-linha" href="https://waze.com/ul?q=Rodovia%20Amaral%20Peixoto%20361%20Praia%20Linda%20S%C3%A3o%20Pedro%20da%20Aldeia&amp;navigate=yes" target="_blank" rel="noopener noreferrer">Abrir no Waze<svg aria-hidden="true"><use href="#i-fora"/></svg></a>
+        </div>
+      </div>
+
+      <figure class="mapa moldura" data-revela>
+        <!-- mapa:inicio (gerado por ferramentas/mapa.js, não editar à mão) -->
+        <svg class="mapa-svg" viewBox="0 0 1000 494" role="img" aria-labelledby="mapa-titulo">
+          <title id="mapa-titulo">Mapa da Rodovia Amaral Peixoto entre Iguaba Grande e São Pedro da Aldeia, com o escritório no km 104, Praia Linda, às margens da Lagoa de Araruama</title>
+          <defs>
+            <linearGradient id="m-ouro" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stop-color="#8c6516"/><stop offset=".45" stop-color="#f2d888"/><stop offset=".7" stop-color="#d6ad4a"/><stop offset="1" stop-color="#94691a"/>
+            </linearGradient>
+          </defs>
+          <image href="img/mapa.svg" x="0" y="0" width="1000" height="494"/>
+          <text class="m-lagoa" x="520" y="454">LAGOA DE ARARUAMA</text>
+          <text class="m-cidade" x="197.2" y="246.7">IGUABA GRANDE</text>
+          <text class="m-cidade" x="982" y="340.3" text-anchor="end">SÃO PEDRO DA ALDEIA</text>
+          <path class="m-rota-brilho" d="M-23.6 410.7L-18.1 405.1L-11.6 400.1L-5.2 397.1L1.6 394.9L10.9 393.9L24.7 394L36.8 392.6L97.6 382.9L102 382L107.5 379.7L112.6 375.2L115.3 370.7L132.7 327.7L137.8 317.3L152.4 296.4L165.1 283.2L173.8 278.1L185.3 273.4L212.9 274.1L240.1 283.3L256.7 283.9L323.1 318.2L331.7 318.7L372.3 311L377.2 311.1L384.4 313.1L435.8 336.3L443.8 337.7L451.5 336.5L572.8 301.7L587.5 295.3L594.4 291.6L607.4 278L610.7 278.3L615.1 281.1L621.7 280.1L633.5 274.2L641.9 271.6L679.6 256.3L685 253.7L689.7 250L703.4 231L710.6 224.3L729.6 212.8L741.3 203.9L759.3 195.1L766 193.8L792.6 191.1L819.3 190.4L833.2 186.4L837.5 184.1L840.9 181.3L883.7 123.1L887.6 116.2L902 98.6L908.9 87.3L917.1 67.9L952 -22.8"/>
+          <path class="m-rota" pathLength="1" d="M-23.6 410.7L-18.1 405.1L-11.6 400.1L-5.2 397.1L1.6 394.9L10.9 393.9L24.7 394L36.8 392.6L97.6 382.9L102 382L107.5 379.7L112.6 375.2L115.3 370.7L132.7 327.7L137.8 317.3L152.4 296.4L165.1 283.2L173.8 278.1L185.3 273.4L212.9 274.1L240.1 283.3L256.7 283.9L323.1 318.2L331.7 318.7L372.3 311L377.2 311.1L384.4 313.1L435.8 336.3L443.8 337.7L451.5 336.5L572.8 301.7L587.5 295.3L594.4 291.6L607.4 278L610.7 278.3L615.1 281.1L621.7 280.1L633.5 274.2L641.9 271.6L679.6 256.3L685 253.7L689.7 250L703.4 231L710.6 224.3L729.6 212.8L741.3 203.9L759.3 195.1L766 193.8L792.6 191.1L819.3 190.4L833.2 186.4L837.5 184.1L840.9 181.3L883.7 123.1L887.6 116.2L902 98.6L908.9 87.3L917.1 67.9L952 -22.8"/>
+          <text class="m-ref" x="42.8" y="428.6">RJ-106</text>
+          <g class="m-marca"><circle cx="124.5" cy="348.3" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="124.5" y="368.3">96</text></g>
+          <g class="m-marca"><circle cx="198.8" cy="273.3" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="198.8" y="293.3">98</text></g>
+          <g class="m-marca"><circle cx="307.3" cy="310.4" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="307.3" y="330.4">100</text></g>
+          <g class="m-marca"><circle cx="416.5" cy="327.8" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="416.5" y="347.8">102</text></g>
+          <g class="m-marca"><circle cx="630.4" cy="275.7" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="630.4" y="295.7">106</text></g>
+          <g class="m-marca"><circle cx="700.7" cy="235.7" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="700.7" y="255.7">108</text></g>
+          <g class="m-marca"><circle cx="803.9" cy="192" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="803.9" y="212">110</text></g>
+          <g class="m-marca"><circle cx="886.3" cy="120.8" r="3" fill="#0d0c0a" stroke="#8a7a52" stroke-width="1.4"/><text class="m-km" x="886.3" y="140.8">112</text></g>
+          <g transform="translate(524.5 315.2)"><g class="m-pino-corpo"><g class="m-pino">
+            <circle class="m-onda" r="26"/>
+            <g transform="translate(0 -6)"><path class="m-pino-escudo" d="M-11 -14H11V-10.5H17L15.5 6 0 22 -15.5 6 -17 -10.5H-11Z"/><text class="m-pino-letras" y="5">JC</text></g>
+          </g></g></g>
+          <g transform="translate(524.5 315.2)"><g class="m-placa-corpo"><g class="m-placa">
+            <line x1="0" y1="-26" x2="0" y2="-92" stroke="rgba(242,216,136,.6)" stroke-width="1.4"/>
+            <rect x="-118" y="-156" width="236" height="64"/>
+            <text x="-100" y="-129">JC Fortes Advocacia</text>
+            <text class="m-placa-km" x="-100" y="-106">km 104 · Praia Linda</text>
+          </g></g></g>
         </svg>
-      </div>
-    </div>
-  </section>
-
-  <section class="sobre" id="sobre">
-    <div class="container sobre-grid">
-      <div class="sobre-badge" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="90" height="90" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2 3 6v6c0 5.5 3.8 9.7 9 11 5.2-1.3 9-5.5 9-11V6z"/><path d="M8 12h8M12 8v8"/></svg>
-      </div>
-      <div class="sobre-text">
-        <p class="eyebrow">Quem somos</p>
-        <h2>Atendimento próximo, análise séria de cada caso</h2>
-        <p>A JC Fortes Advocacia atua em São Pedro da Aldeia e em toda a Região dos Lagos, com foco em Direito de Família, Consumidor e Imobiliário — e também prestando correspondência jurídica pra outros escritórios.</p>
-        <p>Cada atendimento começa com escuta: entender a situação, explicar o que a lei diz e mostrar com clareza os caminhos possíveis, sem prometer resultado antes de conhecer o processo.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="contato" id="contato">
-    <div class="container contato-grid">
-      <div class="contato-info">
-        <p class="eyebrow">Fale com a gente</p>
-        <h2>Marque uma conversa</h2>
-        <ul class="contato-list">
-          <li>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-11.5A7 7 0 0 1 19 9.5C19 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-            <span>Rua Amaral Peixoto, nº 361, km 104 — Praia Linda, São Pedro da Aldeia/RJ</span>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.57.81 1.98.88 2.13.07.14.11.31.02.5-.09.2-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.2.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
-            <a href="https://wa.me/5522974026263" target="_blank" rel="noopener">(22) 97402-6263</a>
-          </li>
-          <li>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-            <a href="https://instagram.com/jcfortesadvocacia" target="_blank" rel="noopener">@jcfortesadvocacia</a>
-          </li>
-        </ul>
-        <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=Rua+Amaral+Peixoto+361+Praia+Linda+S%C3%A3o+Pedro+da+Aldeia+RJ" target="_blank" rel="noopener">Traçar rota</a>
-      </div>
-      <div class="contato-map">
-        <iframe
-          title="Mapa até a JC Fortes Advocacia"
-          src="https://www.google.com/maps?q=Rua+Amaral+Peixoto+361+Praia+Linda+S%C3%A3o+Pedro+da+Aldeia+RJ&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
+        <!-- mapa:fim -->
+        <figcaption>Mapa ilustrativo · ruas e lagoa © colaboradores do <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></figcaption>
+      </figure>
     </div>
   </section>
 
 </main>
 
-<a class="whats-float" href="https://wa.me/5522974026263" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
-  <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2zm5.8 14.16c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.26-.28.57-.35.76-.35.19 0 .38 0 .55.01.18.01.41-.07.64.49.24.57.81 1.98.88 2.13.07.14.11.31.02.5-.09.2-.14.31-.28.48-.14.16-.29.36-.42.49-.14.14-.28.29-.12.57.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.22 1.37.28.14.44.12.6-.07.16-.2.7-.81.88-1.09.19-.28.37-.23.62-.14.26.09 1.64.77 1.92.91.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+<a class="whats-flutua" id="whats-flutua" href="https://wa.me/5522974026263?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20JC%20Fortes%20e%20gostaria%20de%20uma%20orienta%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <svg aria-hidden="true"><use href="#i-whats"/></svg>
 </a>
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="crest" aria-hidden="true">
-        <svg viewBox="0 0 100 118" width="32" height="38">
-          <path class="crest-shape" d="M50 2 L96 18 V56 C96 88 76 106 50 116 C24 106 4 88 4 56 V18 Z"/>
-          <text x="50" y="70" class="crest-letters" text-anchor="middle">JC</text>
-        </svg>
-      </span>
-      <span class="logo-text">JC Fortes<small>Advocacia</small></span>
+<footer class="rodape">
+  <div class="caixa rodape-grade">
+    <div class="rodape-marca">
+      <picture>
+        <source srcset="img/logo-completo.webp" type="image/webp">
+        <img src="img/logo-completo.png" alt="JC Fortes, Soluções Jurídicas e Imobiliárias" width="408" height="486" loading="lazy">
+      </picture>
     </div>
-    <p class="footer-address">Rua Amaral Peixoto, nº 361 — Praia Linda, São Pedro da Aldeia/RJ · (22) 97402-6263</p>
-    <p class="footer-legal">Advocacia sujeita ao Código de Ética e Disciplina da OAB. Nenhum resultado é garantido — cada caso é analisado individualmente.</p>
-    <p class="footer-credit">Site por <a href="#" rel="noopener">Geada Tech</a></p>
+    <div class="rodape-col">
+      <p class="rodape-titulo">Advogados</p>
+      <ul>
+        <li>Dr. José Carlos Fortes · OAB/RJ 201.099</li>
+        <li>Dra. Viviana Faco · OAB/RJ 201.393</li>
+        <li>Dr. Ezio Cotrim · OAB/RJ 159.902</li>
+      </ul>
+    </div>
+    <div class="rodape-col">
+      <p class="rodape-titulo">Contato</p>
+      <ul>
+        <li><a href="https://wa.me/5522974026263" target="_blank" rel="noopener noreferrer">WhatsApp (22) 97402-6263</a></li>
+        <li><a href="mailto:prjosecarlosfortes@gmail.com">prjosecarlosfortes@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/jcfortesadvocacia/" target="_blank" rel="noopener noreferrer">Instagram</a> · <a href="https://www.threads.com/@jcfortesadvocacia" target="_blank" rel="noopener noreferrer">Threads</a></li>
+        <li>Rodovia Amaral Peixoto, nº 361, km 104, Praia Linda, São Pedro da Aldeia/RJ</li>
+      </ul>
+    </div>
+  </div>
+  <div class="caixa rodape-base">
+    <p>Advocacia exercida conforme o Estatuto da Advocacia e o Código de Ética e Disciplina da OAB. O conteúdo deste site é informativo e não substitui a análise do seu caso por um advogado.</p>
+    <p>© <span id="ano">2026</span> JC Fortes Advocacia · Site por <a href="https://geadatech-chi.vercel.app/" target="_blank" rel="noopener noreferrer">Geada Tech</a></p>
+    <p class="previa">Prévia do site, em aprovação.</p>
   </div>
 </footer>
 
-<script src="js/script.js"></script>
 </body>
 </html>
