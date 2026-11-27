@@ -37,6 +37,11 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
+/* Texto e foto sem seleção nem cópia (pedido do escritório, 26/11/2026). Telefone, e-mail, endereço e
+   campos de digitar continuam selecionáveis: são o que a pessoa precisa copiar. */
+body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+input, textarea, select, .contatos, .contatos *, .rodape-contato, .rodape-contato * { -webkit-user-select: text; user-select: text; -webkit-touch-callout: default; }
+img, svg { -webkit-user-drag: none; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--topo) + 12px); }
 html:not(.calmo) { scroll-behavior: smooth; }
 body {

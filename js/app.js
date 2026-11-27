@@ -164,4 +164,17 @@
 
   montarItens();
   escolherItem(itemAtual);
+
+  /* ---------- sem copiar texto nem arrastar foto (pedido do escritório) ---------- */
+  /* Contato e campos de digitar ficam livres. Não segura print nem quem abre o código: só dificulta. */
+  const livre = (no) => {
+    const el = no && (no.nodeType === 1 ? no : no.parentElement);
+    return Boolean(el && el.closest('input, textarea, select, .contatos, .rodape-contato'));
+  };
+  ['copy', 'cut'].forEach((tipo) => document.addEventListener(tipo, (ev) => {
+    const sel = document.getSelection();
+    if (livre(ev.target) || (sel && sel.rangeCount && livre(sel.anchorNode) && livre(sel.focusNode))) return;
+    ev.preventDefault();
+  }));
+  document.addEventListener('dragstart', (ev) => { if (ev.target instanceof Element && ev.target.closest('img, picture')) ev.preventDefault(); });
 })();
