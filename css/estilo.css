@@ -331,6 +331,8 @@ button, textarea { font: inherit; color: inherit; }
   .assuntos, .advogado .botao { grid-column: 1 / -1; }
 }
 
+.contato-nota { display: block; margin-top: 2px; font-size: 12.5px; color: var(--texto-2); }
+
 /* ---------- quem está por trás (fotos do Dr. José Carlos, 26/11/2026) ---------- */
 .fundador { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 20px; margin-top: 20px; align-items: stretch; }
 .fundador-lado { display: grid; grid-template-rows: auto 1fr; gap: 20px; }
